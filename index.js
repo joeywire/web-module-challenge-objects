@@ -160,7 +160,7 @@ and should return an array of objects.
         longest.push(array[i]);
       }
     }
-    return longest
+    return longest;
   }
   
   //Test ------
@@ -186,6 +186,17 @@ The returned object should have the following characteristics:
 
 
 function carMaker(odoNumber) {
-    /* code here */
-    
+  let info = {}; 
+  info.odometer = odoNumber; 
+  info.drive = function(distance) {
+    this.odometer = this.odometer + distance; 
+  }
+  return info; 
 }
+
+// Test -----
+
+// let pontiacGTO = carMaker(56000); 
+// console.log(pontiacGTO.odometer); 
+// pontiacGTO.drive(100); 
+// console.log(pontiacGTO.odometer);
