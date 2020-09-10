@@ -60,7 +60,7 @@ const reviews = [
 console.log(reviews[5].feedback); 
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
-reviews.push({
+reviews.unshift({
   name: 'Joe',
   rating: 3, 
   feedback: "Great atmosphere and company but the menu is very limited!",
@@ -103,9 +103,11 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
+function getLastReview(array) {
+    return `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating}, and their feedback was: ${array[array.length-1].feedback}`;
   } 
+
+// console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -122,9 +124,19 @@ function getLastReview(/* code here */) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array, int) {
+  let reviewArray = []; 
+  for(let i = 0; i < array.length; i++){
+    if(array[i].rating >= int && array[i].rating < int+1){
+      reviewArray.push(array[i]); 
+    }
   }
+  return reviewArray;
+ }
+
+// Test ------
+// let ratingsOfFour = getReviewByRating(reviews, 4); 
+// console.log(ratingsOfFour);
 
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
@@ -140,8 +152,14 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
+  function getLongReviews(array) {
+    //declare longset var to store longest entry so far
+    //iterate through objects w/ for loop 
+      //splice feedback into its own array of string 
+      //compare feedback[i] length to longest length - if longer store initial feedback as longes 
+    // return longest 
+    let longestFeedback; 
+    
   }
   
 
