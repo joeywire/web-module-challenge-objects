@@ -153,15 +153,19 @@ and should return an array of objects.
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
   function getLongReviews(array) {
-    //declare longset var to store longest entry so far
-    //iterate through objects w/ for loop 
-      //splice feedback into its own array of string 
-      //compare feedback[i] length to longest length - if longer store initial feedback as longes 
-    // return longest 
-    let longestFeedback; 
     
+    let longest= []; 
+    for(let i = 0; i < array.length; i++){
+      if (array[i].feedback.split(' ').length > 15){
+        longest.push(array[i]);
+      }
+    }
+    return longest
   }
   
+  //Test ------
+  // let longReviews = getLongReviews(reviews); 
+  // console.log(longReviews);
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
@@ -181,7 +185,7 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
+function carMaker(odoNumber) {
     /* code here */
     
 }
